@@ -1,11 +1,12 @@
 // tailwind.config.js
 
 export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         a: "#3490dc",
-        b: "#ffed4a",
+        vO: "#004e59",  // verde oscuro
         c: "#ffed4a",
         d: "#ffed4a",
         error: "#e3342f",

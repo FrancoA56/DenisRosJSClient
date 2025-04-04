@@ -1,0 +1,24 @@
+/* src/styles/swiper-styles.css */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+    background: #004e59;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #004e59 !important;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: rgba(255,255,255,0.8);
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 1rem;
+    color: #004e59;
+    font-weight: bold;
+  }

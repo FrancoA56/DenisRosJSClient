@@ -8,14 +8,18 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:css": "npx tailwindcss -i ./src/style.css -o ./dist/output.css"
+    "build:css": "npx tailwindcss -i ./src/style.css -o ./src/output.css"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.8",
     "axios": "^1.7.9",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.4.1",
     "redux": "^5.0.1",
+    "swiper": "^11.2.6",
     "tailwindcss": "^4.0.8"
   },
   "devDependencies": {
