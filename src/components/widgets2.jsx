@@ -90,7 +90,7 @@ function Widgets2() {
           href="/coleccion"
           className="text-lg font-medium text-gray-800 hover:underline hover:text-vO transition-colors"
         >
-          Conocelos acá
+          Aprovechá nuestras ofertas
         </a>
       </div>
 

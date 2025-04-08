@@ -1,20 +1,49 @@
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaFacebook,
+  FaInstagram,
+  FaPinterest,
+} from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
 function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-800 pt-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-screen-xl px-4">
         {/* Primera sección: Logo y contacto */}
-        <div className="flex flex-col md:flex-row justify-between border-b border-gray-300 pb-8">
-          <div className="mb-6 md:mb-0 md:w-1/3">
-            <img
-            src="https://www.denis-ros.com/wp-content/uploads/2023/01/denis-ros.png"
-            alt="DENIS & ROS"
-              className="h-12 w-auto mb-3"
-            />{" "}
-            <p className="text-sm">Decoración de Interiores para tu hogar.</p>
+        <div className="flex flex-col md:flex-row border-b border-gray-300 pb-8 gap-8">
+          <div className="md:w-1/3 flex flex-col justify-between">
+            <div>
+              <img
+                src="https://www.denis-ros.com/wp-content/uploads/2023/01/denis-ros.png"
+                alt="DENIS & ROS"
+                className="h-12 w-auto mb-3"
+              />
+              <p className="text-sm">Decoración de Interiores para tu hogar.</p>
+            </div>
+
+            <div className="flex flex-row gap-3 mt-4">
+              <a
+                href="https://www.facebook.com/denisrosarg"
+                aria-label="Facebook"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.instagram.com/denisroshome/"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://www.pinterest.com/DenisRosArgentina"
+                aria-label="Pinterest"
+              >
+                <FaPinterest />
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:w-2/3">
@@ -22,30 +51,50 @@ function Footer() {
               <h3 className="font-semibold text-lg mb-4">Contacto</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <BsFillTelephoneFill className="mt-1 mr-2 flex-shrink-0" />
-                  <span>1133884997</span>
+                  <a
+                    className="flex items-start hover:underline"
+                    href="tel:1156157554"
+                  >
+                    <BsFillTelephoneFill className="mt-1 mr-2 flex-shrink-0" />
+                    <span>1133884997</span>
+                  </a>
                 </li>
                 <li className="flex items-start">
-                  <FaWhatsapp className="mt-1 mr-2 flex-shrink-0" />
-                  <span>1156157554</span>
+                  <a
+                    className="flex items-start hover:underline"
+                    href="https://wa.me/5491133884987"
+                  >
+                    <FaWhatsapp className="mt-1 mr-2 flex-shrink-0" />
+                    <span>1156157554</span>
+                  </a>
                 </li>
                 <li className="flex items-start">
-                  <IoMdMail className="mt-1 mr-2 flex-shrink-0" />
-                  <span>info@denisros.com</span>
+                  <a
+                    className="flex items-start hover:underline"
+                    href="info@denis-ros.com"
+                  >
+                    <IoMdMail className="mt-1 mr-2 flex-shrink-0" />
+                    <span>info@denisros.com</span>
+                  </a>
                 </li>
                 <li className="flex items-start">
-                  <FaMapMarkerAlt className="mt-1 mr-2 flex-shrink-0" />
-                  <span className="break-words">
-                    Calle 152 N° 6352, Piso 4 Of.403, Downtown Greenville,
-                    Hudson, Benamingu.
-                  </span>
+                  <a
+                    className="flex items-start hover:underline"
+                    href="https://goo.gl/maps/5Zo1Wda7bq4iH3o6A"
+                  >
+                    <FaMapMarkerAlt className="mt-1 mr-2 flex-shrink-0" />
+                    <span className="break-words text-ellipsis w-60">
+                      Calle 152 N° 6352, Piso 4 Of.403, Downtown Greenville,
+                      Hudson, Benamingu.
+                    </span>
+                  </a>
                 </li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-4">Medios de pago</h3>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <p className="font-medium">VISA</p>
                 <p className="font-medium">MASTERCARD</p>
                 <p className="font-medium">TRANSFERENCIA</p>
@@ -56,8 +105,8 @@ function Footer() {
         </div>
 
         {/* Segunda sección: Enlaces */}
-        <div className="flex flex-col sm:flex-row justify-between items-center py-6 gap-4 sm:gap-0">
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center py-6 gap-4 md:gap-0">
+          <div className="flex flex-wrap gap-4 md:gap-8">
             <a href="/mi-cuenta" className="hover:text-vO transition-colors">
               Mi cuenta
             </a>
@@ -71,13 +120,27 @@ function Footer() {
               Quiénes Somos
             </a>
           </div>
+          <div className="flex flex-wrap gap-4 md:gap-8">
+            <a
+              href="/terminosycondiciones"
+              className="hover:text-vO transition-colors"
+            >
+              Términos y Condiciones
+            </a>
+            <a
+              href="/politicadedevolucionycambios"
+              className="hover:text-vO transition-colors"
+            >
+              Política de Devolución y Cambios
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Copyright */}
       <div className="border-t border-gray-300 py-4">
-        <div className="container mx-auto px-4">
-          <p className="text-sm text-center">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm">
             © {new Date().getFullYear()} DENIS & ROS. Todos los derechos
             reservados.
           </p>

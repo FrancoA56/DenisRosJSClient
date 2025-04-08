@@ -7,7 +7,7 @@ function Suscribirse() {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             ¡Sumate a nuestro Newsletter!
           </h2>
-          <p className="text-lg md:text-xl">
+          <p className="text-sm md:text-xl">
             Recibí descuentos, promociones, recetas y noticias.
           </p>
         </div>

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { FiSearch, FiShoppingCart, FiX, FiMenu } from "react-icons/fi";
+import SideCart from "./sideCart";
 
 function NavBar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -26,13 +28,13 @@ function NavBar() {
           <button onClick={toggleMenu} className="p-2">
             <FiMenu className="text-2xl" />
           </button>
-          
+
           <img
             src="https://www.denis-ros.com/wp-content/uploads/2023/01/denis-ros.png"
             alt="Denis Ros"
             className="w-24"
           />
-          
+
           <div className="flex items-center">
             <button
               onClick={() => setIsCartOpen(true)}
@@ -64,14 +66,21 @@ function NavBar() {
                   </form>
                 </div>
               </li>
-              <li className="py-2 border-b">
-                <button className="w-full text-left">CUENTA</button>
-              </li>
-              {["NEW IN", "PRODUCTOS", "SALE", "MARCAS", "GIFTCARDS", "RECETAS"].map((item) => (
+              {[
+                "NEW IN",
+                "PRODUCTOS",
+                "SALE",
+                "MARCAS",
+                "GIFTCARDS",
+                "RECETAS",
+              ].map((item) => (
                 <li key={item} className="py-2 border-b">
                   <button className="w-full text-left">{item}</button>
                 </li>
               ))}
+              <li className="py-2 border-b">
+                <button className="w-full text-left">CUENTA</button>
+              </li>
             </ul>
           </div>
         )}
@@ -155,39 +164,11 @@ function NavBar() {
           </div>
         </div>
       </nav>
-
-      {/* Carrito deslizable (se mantiene igual) */}
-      <div
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 z-50 ${
-          isCartOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="p-4 border-b flex justify-between items-center">
-          <h3 className="font-bold text-lg">Tu Carrito</h3>
-          <button
-            onClick={() => setIsCartOpen(false)}
-            className="p-1 rounded-full hover:bg-gray-100"
-          >
-            <FiX className="text-xl" />
-          </button>
-        </div>
-        <div className="p-4">
-          <p className="text-center text-gray-500 py-8">
-            Tu carrito está vacío
-          </p>
-          <button className="w-full bg-vO text-white py-2 rounded hover:bg-opacity-90 mt-4">
-            Ver carrito
-          </button>
-        </div>
-      </div>
-
-      {/* Overlay cuando el carrito está abierto */}
-      {isCartOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsCartOpen(false)}
-        />
-      )}
+      <SideCart
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+      />
     </>
   );
 }
